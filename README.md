@@ -73,3 +73,6 @@ Sep 23 09:12:01 7c50f0140db4 kasm_default_profile.sh[143]:  * Running on https:/
 Sep 23 09:12:01 7c50f0140db4 kasm_default_profile.sh[143]: Press CTRL+C to quit
 ```
 
+# References
+
+- https://github.com/kasmtech/workspaces-core-images
