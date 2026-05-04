@@ -53,7 +53,7 @@ target "kasm-core-minimal_1-4-1" {
   dockerfile = "Dockerfile"
   tags = ["yusiwen/kasm-core-minimal:1.4.1"]
   args = {
-    COMMIT_ID = "674fb67ba321cc6f05c2a4055aff09b09feb8a52"
+    COMMIT_ID = "d9b4772680641bd7b122519bdfdcdc4b3b264d8f"
     BRANCH = "master"
     KASMVNC_VER = "1.4.1"
   }
@@ -67,7 +67,7 @@ target "kasm-core-minimal-systemd_1-4-1" {
   tags = ["yusiwen/kasm-core-minimal:1.4.1-systemd"]
   args = {
     BASE_IMAGE = "antmelekhin/docker-systemd:ubuntu-24.04"
-    COMMIT_ID = "674fb67ba321cc6f05c2a4055aff09b09feb8a52"
+    COMMIT_ID = "d9b4772680641bd7b122519bdfdcdc4b3b264d8f"
     BRANCH = "master"
     KASMVNC_VER = "1.4.1"
   }
