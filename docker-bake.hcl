@@ -28,6 +28,8 @@ target "kasm-core-minimal_1-4-0" {
   dockerfile = "Dockerfile"
   tags = ["yusiwen/kasm-core-minimal:1.4.0"]
   args = {
+    COMMIT_ID = "9195a4f0cc6c81a8b816ef02554acad53424c73f"
+    KASMVNC_VER = "1.4.0"
   }
   no-cache = true
   platforms = ["linux/amd64", "linux/arm64"]
@@ -51,6 +53,9 @@ target "kasm-core-minimal_1-4-1" {
   dockerfile = "Dockerfile"
   tags = ["yusiwen/kasm-core-minimal:1.4.1"]
   args = {
+    COMMIT_ID = "674fb67ba321cc6f05c2a4055aff09b09feb8a52"
+    BRANCH = "master"
+    KASMVNC_VER = "1.4.1"
   }
   no-cache = true
   platforms = ["linux/amd64", "linux/arm64"]

@@ -5,6 +5,7 @@ FROM $BASE_IMAGE AS base_layer
 ### Environment config
 ARG BG_IMG=bg_kasm.png
 ARG EXTRA_SH=noop.sh
+ARG BRANCH=release
 ARG COMMIT_ID=674fb67ba321cc6f05c2a4055aff09b09feb8a52
 ARG KASMVNC_VER=1.3.4
 ARG DISTRO=ubuntu
@@ -13,6 +14,7 @@ ARG LANGUAGE='en_US:en'
 ARG LC_ALL='en_US.UTF-8'
 ARG TZ='Etc/UTC'
 ENV DEBIAN_FRONTEND=noninteractive \
+    BRANCH=${BRANCH} \
     COMMIT_ID=$COMMIT_ID \
     KASMVNC_VER=$KASMVNC_VER \
     DISTRO=$DISTRO \
