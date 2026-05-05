@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-if [ "${DISTRO}" == "parrotos6" ]; then
-  PARROTEXTRA="-t lory-backports"
-fi
-
 echo "Install some common tools for further installation"
 if [ "${DISTRO}" == "alpine" ]; then
   apk add --no-cache \
@@ -32,12 +28,7 @@ else
   # On Ubuntu, this is a no-op
   dpkg-reconfigure --frontend noninteractive tzdata
 
-  # software-properties is removed from kali-rolling
-  if grep -q "kali-rolling" /etc/os-release; then
-    apt-get install ${PARROTEXTRA} -y sudo iproute2 iptables vim wget net-tools locales bzip2 wmctrl mesa-utils bc
-  else
-    apt-get install ${PARROTEXTRA} -y sudo iproute2 iptables vim wget net-tools locales bzip2 wmctrl software-properties-common mesa-utils bc
-  fi
+  apt-get install -y sudo iproute2 iptables vim wget net-tools locales bzip2 wmctrl software-properties-common mesa-utils bc vulkan-tools
 
   echo "generate locales for en_US.UTF-8"
   locale-gen en_US.UTF-8
