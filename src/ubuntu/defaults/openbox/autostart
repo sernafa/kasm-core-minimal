@@ -1,1 +1,2 @@
 stalonetray -f 0 &
+(sleep 1 && tint2 ) &

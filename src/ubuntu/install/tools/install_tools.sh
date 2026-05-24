@@ -18,6 +18,7 @@ if [ "${DISTRO}" == "alpine" ]; then
     sudo \
     tar \
     wget \
+    zip \
     bc
 else
   apt-get update

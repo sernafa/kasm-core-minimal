@@ -61,11 +61,12 @@ RUN bash $STARTUPDIR/set_user_permission.sh $STARTUPDIR $HOME && \
 
 ### Create user and home directory for base images that don't already define it
 RUN (groupadd -g 1000 kasm-user \
-    && useradd -M -u 1000 -g 1000 kasm-user \
+    && useradd -M -u 1000 -g 1000 -s /bin/bash kasm-user \
     && usermod -a -G kasm-user kasm-user) ; exit 0
 ENV HOME=/home/kasm-user
 WORKDIR $HOME
 RUN mkdir -p $HOME && chown -R 1000:0 $HOME
+RUN echo "kasm-user ALL=NOPASSWD: ALL" > /etc/sudoers.d/sudoers
 
 ### FIX PERMISSIONS ## Objective is to change the owner of non-home paths to root, remove write permissions, and set execute where required
 # these files are created on container first exec, by the default user, so we have to create them since default will not have write perm
@@ -148,6 +149,8 @@ USER 1000
 
 COPY ./src/ubuntu/defaults/openbox/autostart .config/openbox/
 COPY ./src/ubuntu/defaults/openbox/menu.xml .config/openbox/
+COPY ./src/ubuntu/defaults/openbox/rc.xml .config/openbox/
+COPY ./src/ubuntu/defaults/tint2/tint2rc .config/tint2/
 
 ENTRYPOINT ["/dockerstartup/kasm_default_profile.sh", "/dockerstartup/vnc_startup.sh", "/dockerstartup/kasm_startup.sh"]
 CMD ["--wait"]

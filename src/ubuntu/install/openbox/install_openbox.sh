@@ -40,7 +40,13 @@ if [[ "$DISTRO" = @(ubuntu|debian) ]]; then
     x11-xserver-utils \
     xclip \
     xterm \
-    stalonetray
+    terminator \
+    stalonetray \
+    tint2 \
+    feh \
+    rofi \
+    pcmanfm \
+    xfce4-clipman
   echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
   locale-gen
 elif [ "$DISTRO" = "alpine" ]; then
