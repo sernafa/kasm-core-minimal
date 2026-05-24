@@ -1,3 +1,10 @@
+> **Fork notice**
+>
+> This repository is a fork of [yusiwen/kasm-core-minimal](https://github.com/yusiwen/kasm-core-minimal),
+> maintained as a base image for downstream Kasm Workspaces customizations.
+> Local changes on top of upstream may include additional desktop utilities,
+> default openbox/tint2 configuration and other project-specific tweaks.
+
 ## Features
 
 - minimal image size, approximate only 900MB
@@ -75,4 +82,5 @@ Sep 23 09:12:01 7c50f0140db4 kasm_default_profile.sh[143]: Press CTRL+C to quit
 
 # References
 
-- https://github.com/kasmtech/workspaces-core-images
+- Upstream fork: https://github.com/yusiwen/kasm-core-minimal
+- Kasm core images: https://github.com/kasmtech/workspaces-core-images
